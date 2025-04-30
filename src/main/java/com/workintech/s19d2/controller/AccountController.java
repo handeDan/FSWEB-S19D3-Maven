@@ -3,12 +3,14 @@ package com.workintech.s19d2.controller;
 import com.workintech.s19d2.entity.Account;
 import com.workintech.s19d2.service.AccountService;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/account")
+@RequiredArgsConstructor
 public class AccountController {
 
   @Autowired private AccountService accountService;
@@ -24,7 +26,7 @@ public class AccountController {
   }
 
   @PostMapping
-  public ResponseEntity<Account> createAccount(@RequestBody Account account) {
+  public ResponseEntity<Account> saveAccount(@RequestBody Account account) {
     return ResponseEntity.ok(accountService.save(account));
   }
 

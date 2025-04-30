@@ -24,6 +24,15 @@ public class AuthenticationService {
   }
 
   public Member register(String email, String password) {
+    // Bu örnekte sadece sahte bir Member döndürülüyor.
+    Member member = new Member();
+    member.setId(1L);
+    member.setEmail(email);
+    member.setPassword(password); // Gerçek projede password hash'lenmeli
+    return member;
+  }
+
+  public Member register2(String email, String password) {
     if (memberRepository.findByEmail(email).isPresent()) {
       throw new RuntimeException("User with given email already exists");
     }

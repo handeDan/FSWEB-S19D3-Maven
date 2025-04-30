@@ -12,10 +12,25 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Account {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
+
+  @Column(nullable = false)
+  private String currency;
+
+  @Column(nullable = false)
+  private String description;
+
+  @Column(nullable = false)
+  private String type;
+
+  @Column(nullable = false)
+  private String status;
+
+  @Column(nullable = false)
+  private String balance;
 }
